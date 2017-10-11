@@ -22,3 +22,15 @@ type BookRecord = (BookInfo, BookReview)
 
 myInfo = Book 9780135072455 "Algebra of Programming"
     ["Richard Bird", "Oege de Moor"]
+
+{- Each of an algebraic data type’s value constructors can take zero or more
+arguments. Here's one way to represent billing information -}
+type CardHolder = String
+type CardNumber = String
+type Address = [String]
+
+data BillingInfo = CreditCard CardNumber CardHolder Address
+    | CashOnDelivery
+    | Invoice CustomerID
+      deriving (Show)
+
