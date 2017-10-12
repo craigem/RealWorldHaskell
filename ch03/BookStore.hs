@@ -34,3 +34,7 @@ data BillingInfo = CreditCard CardNumber CardHolder Address
     | Invoice CustomerID
       deriving (Show)
 
+bookID      (Book id title authors) = id
+bookTitle   (Book id title authors) = title
+bookAuthors (Book id title authors) = authors
+
