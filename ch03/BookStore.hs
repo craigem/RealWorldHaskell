@@ -34,7 +34,13 @@ data BillingInfo = CreditCard CardNumber CardHolder Address
     | Invoice CustomerID
       deriving (Show)
 
+-- Pattern matching for BookInfo
 bookID      (Book id title authors) = id
 bookTitle   (Book id title authors) = title
 bookAuthors (Book id title authors) = authors
+
+-- Wild card pattern matching
+nicerID      (Book id _     _      ) = id
+nicerTitle   (Book _  title _      ) = title
+nicerAuthors (Book _  _     authors) = authors
 
